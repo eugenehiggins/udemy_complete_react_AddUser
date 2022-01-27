@@ -4,6 +4,7 @@ import classes from './AddUser.module.scss';
 import MyButton from '../UI/Button';
 import {useState} from 'react';
 import ErrorModal from '../UI/ErrorModal';
+import Wrapper from '../Helpers/Wrapper';
 
 
 const AddUser = (props) => {
@@ -11,7 +12,7 @@ const AddUser = (props) => {
         username: '',
         age: '',
     }
-    let errorMessage = ""
+
     const [formValues, setFormValues] = useState(initialState)
     const [error, setError] = useState("")
 
@@ -20,6 +21,14 @@ const AddUser = (props) => {
             ...formValues,
             [event.target.name]: event.target.value,
         })
+    }
+
+    const handleConfirm = (event) => {
+        return (
+            <>
+
+            </>
+        )
     }
 
     const addUserHandler = (event) => {
@@ -51,10 +60,11 @@ const AddUser = (props) => {
     }
 
     return (
-        <>
+        <Wrapper>
             {error && <ErrorModal
                 error={error}
                 setError={setError}
+                onConfirm={handleConfirm}
             />}
             <MyCard title="The title" header="The header" className={classes.input}>
 
@@ -85,7 +95,7 @@ const AddUser = (props) => {
                     >Add User</MyButton>
                 </Form>
             </MyCard>
-        </>
+        </Wrapper>
     )
 }
 

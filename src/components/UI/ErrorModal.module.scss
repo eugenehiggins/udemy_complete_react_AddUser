@@ -28,6 +28,11 @@
     display: flex;
     justify-content: flex-end;
 }
+
+.backdrop {
+
+}
+
 @media (min-width: 768px) {
 .modal {
         left: calc(50% - 20rem);

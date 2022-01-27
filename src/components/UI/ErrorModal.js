@@ -3,6 +3,16 @@ import {Modal} from 'react-bootstrap';
 import MyButton from './Button';
 import classes from "./ErrorModal.module.scss";
 
+const Backdrop = (props) => {
+
+    return (
+        <div className={classes.backdrop} onClick={props.onConfirm}>
+
+        </div>
+    )
+}
+
+export default Backdrop;
 
 const ErrorModal = (props) => {
     const handleHide = (event) => {
